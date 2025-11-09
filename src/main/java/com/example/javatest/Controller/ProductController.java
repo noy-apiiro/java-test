@@ -1,4 +1,4 @@
-package com.example.javatest.controller;
+package com.example.javatest.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +17,8 @@ public class ProductController extends BaseEntityController {
 
     @Override
     @PostMapping("/{id}/delete")
-    public String removeEntity(@PathVariable("id") Long id,
-                               @PathVariable("basePath") String basePath) {
+    public String removeEntity(@PathVariable("basePath") String basePath,
+                               @PathVariable("id") Long id) {
         System.out.println("Deleting product with custom logic. Product ID: " + id);
         return "redirect:/" + BASE_PATH + "/list";
     }
