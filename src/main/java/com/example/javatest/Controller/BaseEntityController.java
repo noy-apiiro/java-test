@@ -10,13 +10,13 @@ public class BaseEntityController {
     @PostMapping("/{id}/delete")
     public String removeEntity(@PathVariable("basePath") String basePath,
                                @PathVariable("id") Long id) {
-        System.out.println("Deleting entity with ID: " + id + " from section: " + basePath);
+        System.out.println("Deleting entity with ID: " + id + " from: " + basePath);
         return "redirect:/" + basePath + "/list";
     }
 
     @GetMapping("/list")
     public String listEntities(@PathVariable("basePath") String basePath) {
-        System.out.println("Listing entities for section: " + basePath);
+        System.out.println("Listing entities: " + basePath);
         return basePath + "/list";
 
     }
