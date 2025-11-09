@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller("baseEntityController")
-@RequestMapping("/{basePath:.+}")
+@RequestMapping("/{basePath:}")
 public class BaseEntityController {
 
     @PostMapping("/{id}/delete")
@@ -18,6 +18,5 @@ public class BaseEntityController {
     public String listEntities(@PathVariable("basePath") String basePath) {
         System.out.println("Listing entities: " + basePath);
         return basePath + "/list";
-
     }
 }
